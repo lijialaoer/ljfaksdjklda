@@ -2,7 +2,7 @@
 * @Author: lenovo
 * @Date:   2017-08-17 16:20:52
 * @Last Modified by:   lenovo
-* @Last Modified time: 2017-09-19 20:27:18
+* @Last Modified time: 2017-09-22 22:33:47
 */
 @import url('base.css');
 /* 头部开始 */
@@ -94,7 +94,7 @@ nav{
 	height: 150px;
 	background: pink;
 	position: absolute;
-	/* bottom: -150px; */
+	top: 140px;
 	left: 0;
 	z-index: 15;
 	display: none;
@@ -214,19 +214,23 @@ nav{
 	margin: 0 auto;
 	position: relative;
 	margin-bottom: 14px;
+	overflow: hidden;
 }
 .bannerbody{
 	width: 1226px;
 	height: 460px;
 	background: black;
 	position: relative;
+	/* overflow: hidden; */
 }
 .bannerbody li{
 	width: 1226px;
 	height: 460px;
 	background: yellow;
-	float: left;
 	position: absolute;
+	top: 0;
+	left: 1226px;
+	/* opacity: 1; */
 	/* display: none; */
 }
 .banner-left,.banner-right{
@@ -268,7 +272,7 @@ nav{
 	position: absolute;
 	right: 35px;
 	bottom: 25px;
-	z-index: 10;
+	z-index: 40;
 }
 .banner-circlebox div{
 	width: 8px;
@@ -472,6 +476,8 @@ aside{
 	background: #ffffff;
 	margin: 0 auto;
 	padding-top: 26px;
+	position: relative;
+	overflow: hidden;
 	/* padding-bottom: 40px; */
 }
 .star-title{
@@ -506,6 +512,7 @@ aside{
 	height: 22px;
 	background: #ffffff;
 	float: left;
+	cursor: pointer;
 
 }
 .star-btn .star-btn-left{
@@ -515,9 +522,13 @@ aside{
 	color: #ff6700;
 }
 .star-goods{
-	width: 1226px;
+	width: 2480px;
 	height: 340px;
 	background: #ffffff;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transition: all 0.2s ease;
 }
 .star-goods li{
 	width: 234px;
@@ -549,7 +560,7 @@ aside{
 }
 .star-goods .star-goods-last{
 	border-top: 1px solid #00c0a5;
-	margin-right: 0;
+	/* margin-right: 0; */
 }
 .star-goods li a img{
 	display: block;
