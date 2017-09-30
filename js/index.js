@@ -2,50 +2,50 @@
 * @Author: lenovo
 * @Date:   2017-09-18 21:53:05
 * @Last Modified by:   lenovo
-* @Last Modified time: 2017-09-22 22:21:38
+* @Last Modified time: 2017-09-30 17:14:32
 */
 
 window.onload=function(){
 	let cav=document.getElementsByClassName('cenav')[0];
 	let lis=cav.getElementsByTagName('li');
 	let it=document.getElementsByClassName('item');
-	// for(let i=0;i<lis.length;i++){
-	// 	lis[i].onmouseover=function(){
-	// 		it[i].style.display='block';
-	// 	}
-	// 	lis[i].onmouseout=function(){
-	// 		it[i].style.display='none';
-	// 	}
-	// }
+	for(let i=0;i<lis.length;i++){
+		lis[i].onmouseover=function(){
+			it[i].style.display='block';
+		}
+		lis[i].onmouseout=function(){
+			it[i].style.display='none';
+		}
+	}
 
 
-	// let nav=document.getElementsByClassName('nav-body')[0];
-	// let nlis=nav.getElementsByTagName('li');
-	// let nit=document.getElementsByClassName('itmi');
-	// console.log(nit)
-	// for(let i=0;i<nlis.length;i++){
-	// 	nlis[i].onmouseover=function(){
-	// 		nit[i].style.display='block';
-	// 		// nit[i].style.height='150px';
+	let nav=document.getElementsByClassName('nav-body')[0];
+	let nlis=nav.getElementsByTagName('li');
+	let nit=document.getElementsByClassName('itmi');
+	console.log(nit)
+	for(let i=0;i<nlis.length;i++){
+		nlis[i].onmouseover=function(){
+			nit[i].style.display='block';
+			// nit[i].style.height='150px';
 			
-	// 	}
-	// 	nlis[i].onmouseout=function(){
-	// 		nit[i].style.display='none';
-	// 		// nit[i].style.height=0;
+		}
+		nlis[i].onmouseout=function(){
+			nit[i].style.display='none';
+			// nit[i].style.height=0;
 			
-	// 	}
-	// }
+		}
+	}
 
 
-	// let gouwuche=document.getElementsByClassName('shoppingche')[0];
-	// let gotext=gouwuche.getElementsByClassName('quick')[0];
-	// gouwuche.onmouseover=function(){
-	// 	gotext.style.display='block';
-	// }
-	// gouwuche.onmouseout=function(){
-	// 	gotext.style.display='none';
-	// }
-	// console.log(gotext)
+	let gouwuche=document.getElementsByClassName('shoppingche')[0];
+	let gotext=gouwuche.getElementsByClassName('quick')[0];
+	gouwuche.onmouseover=function(){
+		gotext.style.display='block';
+	}
+	gouwuche.onmouseout=function(){
+		gotext.style.display='none';
+	}
+	console.log(gotext)
 
 
 
@@ -234,7 +234,7 @@ window.onload=function(){
 		now=next;
 	}
 
-	function rrun1(){
+	function rrun1(){ 
 		next--;
 		if(next<0){
 			next=blis.length-1;
@@ -242,6 +242,8 @@ window.onload=function(){
 		}
 		let w=parseInt(getComputedStyle(box,null).width);
 		blis[next].style.left=`${-w}px`;
+		circle[next].style.background='#5c5c5f';
+		circle[now].style.background='rgba(0,0,0,0)';
 		animate(blis[now],{left:w});
 		animate(blis[next],{left:0},function(){
 			flag=1;
@@ -250,4 +252,6 @@ window.onload=function(){
 
 	}
 
-
+onmousewheel//滚轮事件
+e.wheelDelta
+e.preventDefault();//阻止默认行为

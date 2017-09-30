@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span></span>天
+	<span></span>时
+	<span></span>分
+	<span></span>秒
+</body>
+</html>
+<script>
+
+	function daotime(){
+		let spans=document.querySelectorAll('span');
+		let arr=[];
+		let now=new Date();
+		let future=new Date('2017/10/4 0:0:0');
+		let cha=(Math.floor(future.getTime()-now.getTime())/1000);
+		let day=Math.floor(cha/(60*60*24));
+		arr.push(day);
+		cha=cha%(60*60*24);
+		let hour=Math.floor(cha/(60*60));
+		arr.push(hour);
+		cha=cha%(60*60);
+		let min=Math.floor(cha/60);
+		arr.push(min);
+		let sec=Math.floor(cha%60);
+		arr.push(sec);
+		arr.forEach((element,index) =>{
+			spans[index].innerText=element;
+		})
+		
+
+	}
+	daotime();
+	setInterval(daotime,1000);
+	let nihao=10*60;
+	console.log(nihao)
+</script>
